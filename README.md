@@ -1,2 +1,24 @@
-# thesis_latex_template
-A template for a bachelor/master/doctorate thesis in Latex from the Norwegian University of Science and Technology (NTNU)
+# Thesis template for Latex
+(Norwegian description below)
+
+This repo contains a template for a thesis written in Latex, made by me for my master's degree from the Norwegian University of Science and Technology (NTNU) in 2022. I have designed this template to fit for a scientific dissertation with the basic build-up for a report, and included explanations for the design choices and how to use it (see comments in the latex-file).
+
+### Disclaimer: 
+This is not an official template issued from NTNU or any other university, but my personal template that I share in the hopes that someone writing their thesis for their bachelor/master/doctorate/whatever may find it useful and may save time with their report set-up. 
+NTNU as far as I know (nov, 2022) does not have any official template for writing a thesis, so feel free to use this in your own dissertation.
+
+## How to use:
+Sett inn
+
+
+
+
+# Mal for avhandling i Latex
+Dette repoet inneholder en mal for en avhandling/sluttrapport skrevet i Latex, som ble utviklet av meg for min masteroppgave fra Norges Teknisk- og Naturvitenskapelige Universitet (NTNU) i 2022. Jeg designet denne malen for å passe vitenskapelige avhandlinger med en vanlig oppbygning for rapporter, og har inkludert forklaringer for designvalgene samt hvordan bruke den (se kommentarer i latex-filen).
+
+### Forbehold:
+Dette er ikke en offisiell mal utstedt av NTNU eller noe annet universitet, men min personlige mal som jeg deler i håp om at noen som skriver deres avhandling for deres bachelor/master/doktorgrad/hva enn kan bruke den og spare tid på å sette opp selve dokumentet.
+NTNU har, så langt jeg vet (nov, 2022), ikke noe offisiell mal for å skrive en avhandling, så bare bruk denne malen i din egen rapport om du ønsker.
+
+## Hvordan bruke den:
+Sett inn
