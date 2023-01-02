@@ -1,0 +1,181 @@
+\documentclass[a4paper, 12pt, openany]{book} %chose the paper size and font size. Openany ensures that all all chapters and similar may begin at any page, not only odd pages. For the introductory pages and appendices we want openany, but for chapter pages in the main content we want chapters to begin only on odd pages (right hand side). The book class ensures that the margins are automatically adjusted such that left hand pages are slightly moved to the left and vice versa at the right, which makes the thesis very readable and good looking when printed in bound book format.
+\usepackage[utf8]{inputenc} %to manage special characters
+\usepackage[T1]{fontenc} %to manage special characters
+\usepackage[Bjarne]{fncychap} %fancy chapter style (many more available, like Sonny or Lenny etc.)
+\usepackage{fancyhdr} %to customize the headers
+\usepackage[lmargin=1.5in, rmargin=1in, tmargin=1in, bmargin=1in]{geometry} %sets the margins for the pages
+\setcounter{tocdepth}{2} %table of contents number depth for subsections (2 = x.x.x)
+\setcounter{secnumdepth}{4} %numbering depth for headers for subsections in the text(4 = x.x.x.x)
+\usepackage{url} %to include urls
+\usepackage{listings} %include this if you want to include code in the thesis
+\usepackage{amsmath,amssymb} %mathematical package
+\usepackage{siunitx} %includes SI-units
+\usepackage[bf]{caption} %makes float captions bold
+\usepackage{array, booktabs} %to make better tables
+\usepackage{graphicx} %to include graphics
+\usepackage{float} %to include floats
+\usepackage[export]{adjustbox} %to adjust floats
+\usepackage{subfig} %to include subfigures
+\usepackage{chngcntr} %will make it possible to change the counter for tables, figures etc. such as below
+\counterwithin{figure}{section} %change counter for figures within sections (also possible to choose for each chapter
+\counterwithin{table}{section} %change counter for tables within sections
+\usepackage{color, xcolor} %edit e.g. text colors
+
+\usepackage[backend = biber,
+            style = numeric,
+            date = long,     % Long: 24th Mar. 1997 | Short: 24/03/1997
+            sorting = none,
+            maxcitenames = 3,   % max names to include before et. al.
+            ]{biblatex} %customize the look of your citations and bibliography
+\addbibresource{bibliography.bib} %declare the bibliography resource
+\usepackage{comment} %to be able to comment out sections in the .tex files
+\usepackage{afterpage} %to customize page commands such as below
+\newcommand\myemptypage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+    } %sets new page command to insert an empty page without adding to the page counter or having a page number
+
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{comment}
+% The title page:
+% For NTNU students this page will be generated automatically when submitting your paper, and should not be included in the final file from Latex. Delete or comment out the title page setup. The final report should then start with the first page being the abstract. I have included a title page here so it is possible to see how it may look like, and for those who does not get an automatically generated title page. Of course you will need to change the names and titles etc. to your case.
+
+%the title page should be an odd page (right hand side)
+
+\begin{titlepage}
+\newgeometry{left=1.6in, right=2in}
+\vspace*{1.5cm}
+
+\noindent  \textcolor{gray}{\large Nina Salvesen} \\
+\vspace{1cm}
+
+\noindent \textbf{\Large The title of your master's thesis should be written here} \\
+\vspace{0.5cm}
+
+\noindent {\large Any undertitle is written here} \\
+
+
+
+\vspace{7cm}
+\noindent Master's thesis in Physics and Mathematics \\
+Supervisor: Supervisor Name \\
+Co-supervisor: Co-supervisor Name \\
+June 2022 \\
+
+\vspace{0.2cm}
+\noindent Norwegian University of Science and Technology \\
+Faculty of Natural Sciences \\
+Department of Physics \\
+
+\begin{figure}[h]
+    \includegraphics[width=0.28\textwidth]{Figures/ntnu_basic.png}
+\end{figure}
+\end{titlepage}
+\restoregeometry
+\myemptypage %empty page such that the abstract starts at the first right hand side after the title page
+%\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The pre-chapters
+\chapter*{Abstract} %pre-chapters should not be numbered, hence the "*"
+\pagenumbering{roman} %introductory pages should be roman
+\setcounter{page}{1}
+\addcontentsline{toc}{chapter}{\protect\numberline{}Abstract} %add the chapter to the table of contents, this is not automatically added when creating unnumbered chapters (*). Add it in a chapter style, and keep all chapters on the same numberline indent regardless of number or not on the chapter
+\input{Chapters/00Abstract} %insert the chapter text from the files
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{\protect\numberline{}Preface} 
+\input{Chapters/01Preface}
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{\protect\numberline{}Contents}
+
+%add to table of contents list of figures and tables, and insert list of figures and tables
+\addcontentsline{toc}{chapter}{\protect\numberline{}\listfigurename}
+\listoffigures
+\addcontentsline{toc}{chapter}{\protect\numberline{}\listtablename}
+\listoftables
+
+
+\chapter*{Abbreviations}
+\addcontentsline{toc}{chapter}{\protect\numberline{}Abbreviations}
+\input{Chapters/02Abbreviations}
+\newpage
+\myemptypage
+%add an empty non-counted page by the command below in order to get the first chapter on the left hand side, if needed (check your page number so that the first chapter is on an odd page)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Customize the layout of the main content of your thesis
+
+\pagestyle{fancy} %set customized page style for header
+\fancyhf{} %clear header and footer fields
+\renewcommand{\headrulewidth}{0pt} %set to no rule
+\fancyhead[LE, RO]{\thepage} %set the page number at left for even, right for odd pages
+\fancyhead[RE, LO]{\leftmark} %set the chapter name at right for even, left for odd pages
+%is is possible to design the header with the chapter as you wish, e.q. only the chapter or only the name, all lowercase instead etc.
+%you could also design the footer if you wish, for example:
+%\fancyfoot[LE, RO]{\thepage}
+\setlength{\headheight}{14.49998pt} %set the header height
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%main content 
+
+\pagenumbering{arabic}
+\chapter{Introduction}
+\input{Chapters/03Introduction}
+\cleardoublepage
+%the cleardoublepage command ensures that the next text page is on the right-hand side (odd page) and produces a blank page if necessary to achieve that, as all chapters should begin on the right hand side
+
+
+\chapter{Theory}
+\input{Chapters/04Theory}
+\cleardoublepage
+
+
+\chapter{Methods}
+\input{Chapters/05Method}
+\cleardoublepage
+
+
+\chapter{Results}
+\input{Chapters/05Results}
+\cleardoublepage
+
+
+\chapter{Discussion}
+\input{Chapters/06Discussion}
+\cleardoublepage
+
+
+\chapter{Conclusions}
+\input{Chapters/07Conclusion}
+\cleardoublepage
+
+
+\addcontentsline{toc}{chapter}{\protect\numberline{}References}
+\printbibliography[title={References}] %you may change the title in the toc here if you want
+\cleardoublepage
+
+
+\chapter*{\LARGE \textbf{Appendices}}
+\fancyhf{} %clear the header, it should be empty for the appendices
+\renewcommand{\headrulewidth}{0pt} %no rule
+\fancyfoot[C]{\thepage} %set the page numbers in the center of the footer instead 
+
+%it is possible to set a different page numbering style for the appendix, but I personally just continued with the same page numbering as the main content as I find that more tidy
+%\pagenumbering{roman}
+%\setcounter{page}{1}
+\addcontentsline{toc}{chapter}{\protect\numberline{}Appendices:}
+\appendix
+\input{Chapters/08Appendix}
+
+
+\end{document}

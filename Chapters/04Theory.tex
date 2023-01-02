@@ -1,0 +1,109 @@
+%equations, bib. \\
+
+\section{Equations}
+
+A simple equation can be included as: \\
+
+\begin{equation}
+        r = 2\pi^{2}
+        \label{eqn:simple_eqn}
+\end{equation} \\
+
+
+\noindent The text below shows an example of how to align equations on the equal sign, with only one reference for both. This may be useful for when they are linked and are actually only one equation but splitting them up makes it more readable. \\
+
+\begin{equation}
+\begin{aligned}
+        a &= \sin^{2}(\Delta\phi/2) + \cos(\phi_{1})\cdot\cos(\phi_{2})\cdot\sin^{2}(\Delta\lambda/2)\\
+        d &= 2R\cdot\arcsin(\sqrt{a})
+\end{aligned}
+\label{eqn:haversine}
+\end{equation} \\
+
+\noindent The whole equation can be referenced as "equation \eqref{eqn:haversine}", here showing the Haversine formula. One may also align sub-equations such that they are numbered the same but have a letter differentiating them as shown below. This can be used when they are linked, but you will need to reference both individual parts.
+
+\begin{subequations}
+\begin{align}
+    SSD 
+        & \quad = \sum_{i=1}^{n} (\vec{x_{i}}-\vec{\mu_{q}})^{2} \label{eq:ssd}\\[15pt] %creates more space between the sub-equations
+    SSE 
+        & \quad = \sum_{q=1}^{k} \delta_{rq} SSD \label{eq:sse}
+\end{align}
+\label{eqn:subeqn}
+\end{subequations} \\
+
+\noindent These equations can be refrenced by their spesific sub-equation as "equation \eqref{eq:ssd}", or by the whole group as "equations \eqref{eqn:subeqn}". The "double backslashes" in the .tex creates line spaces and gives more room around the equations and paragraphs. Use them as you think feels right. 
+
+
+
+\section{Tables and footnotes}
+
+Here is an example of both a regular table with data and a table with split headers, for scientific usage. Do not use horizontal/vertical rulers between the data, or encase the table with rulers. \\
+
+\begin{table}[ht!]
+\centering
+    \begin{tabular}{ m{3cm} m{2.5cm} m{2.5cm} m{2.5cm} m{2cm} } 
+    \toprule
+    \toprule
+    \textbf{Statistic} & \textbf{Velocity} & \textbf{Altitude} & \textbf{1/Angle} & \textbf{Temp.} \\
+    \midrule
+    Mean    & 122.68    & 240.98   & 93.75     & 13.95 \\[1.3ex]
+    Std     & 224.51    & 145.88   & 60.39     & 4.44  \\[1.3ex]
+    Q1      & 28.00     & 111.60   & 34.15     & 10.60 \\[1.3ex]
+    Median  & 63.00     & 223.20   & 99.59     & 13.30 \\[1.3ex]
+    Q3      & 137.00    & 359.10   & 151.99    & 16.70 \\[1.3ex]
+    Min     & 0.00      & 1.00     & 0.00      & 3.30  \\[1.3ex]
+    Max     & 14519.00  & 616.70   & 180.00    & 32.10 \\[1.3ex]
+    \bottomrule
+    \bottomrule
+    \end{tabular}
+% the square brackets after \caption gives the table a proper title in the list of tables, instead of just inserting the beginning of the table caption
+\caption[Dynamic feature statistics with outliers]{Table of dynamic feature statistics where outliers are included, for all data points. Velocity is given in \textit{m/h}, the altitude in \textit{mamsl}, the inverse trajectory angle in 1/degrees, and temperature in degrees Celsius.}
+\label{table:stat_fliers}
+\end{table}
+
+
+\begin{table}[ht!]
+\centering
+    \begin{tabular}{ m{3cm} m{5cm} m{3cm} } 
+    \toprule
+    \toprule
+    \textbf{Area 1} & \textbf{Start date} & \textbf{End date} \\
+    \midrule
+    2018    & 03.06    & 29.06                       \\[1.3ex]
+    2019    & 03.06    & 03.07 or 31.08\footnotemark \\[1.3ex]
+    2020    & 03.06    & 05.09                       \\[1.3ex]
+    \midrule
+    \textbf{Area 2} & \textbf{Start date (farm 1/2)} & \textbf{End date} \\
+    \midrule
+    2012    & 09.06            & 07.09               \\[1.3ex]
+    2013    & 23.06 / 15.06    & 25.08               \\[1.3ex]
+    2014    & 05.06 / 25.06    & 10.09               \\[1.3ex]
+    2015    & 13.06 / 03.07    & 06.09               \\[1.3ex]
+    2016    & 17.06            & 22.07               \\[1.3ex]
+    \bottomrule
+    \bottomrule
+    \end{tabular}
+\caption[Selected time ranges for all data]{Selected time ranges for the data in all areas and all years.}
+\label{table:time_ranges}
+\end{table}
+
+\footnotetext{A footnote explaining something.}
+
+
+
+\section{A single figure}
+
+Figure \ref{fig:latlong} is included as an example. The square brackets before the caption description contains the title of the figure, which is what will be written in the list of figures. This should be short and concise. The same layout applies to tables and other floats. Remember to change the title as well as the caption if you are copying these examples. In the list of figures and tables all the different floats will be grouped together by chapter. Remember to always reference all your figures and tables in the text at least once.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/latlong.png}
+  \caption[Illustration of latitude and longitude]{Illustration of the earth, and how latitudes and longitudes are calculated with respect to the equator and the prime meridian.}
+  \label{fig:latlong}
+\end{figure}
+
+
+\section{Citations}
+
+Here are some examples on how to reference a source (where none is relevant to the text but just for illustration purposes only). One may cite a single reference by calling \cite{wolves_of_mount_mckinley}, or several in the same bracket by calling \cite{machine_learning, clustering_impossibility} when they are all related to the same statement. There are many different styles on how to cite, and how the layout and order of your citation style is presented. This is my favorite, as I find it neat and tidy \cite{sheep}. It will show up in order of appearance in the references section.
