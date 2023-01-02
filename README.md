@@ -3,12 +3,15 @@
 
 This repo contains a template for a thesis written in Latex, made by me for my master's degree from the Norwegian University of Science and Technology (NTNU) in 2022. I have designed this template to fit for a scientific dissertation with the basic build-up for a report, and included explanations for the design choices and how to use it (see comments in the latex-file).
 
+## How to use:
+Press the green code button on the top right, and click download ZIP. In overleaf or Latex click "New Project" and then "Upload Project". Drag the dowloaded zipfile from your files.
+
+### License:
+LaTeX Project Public License (LPPL) 1.3c.
+
 ### Disclaimer: 
 This is not an official template issued from NTNU or any other university, but my personal template that I share in the hopes that someone writing their thesis for their bachelor/master/doctorate/whatever may find it useful and may save time with their report set-up. 
 NTNU as far as I know (nov, 2022) does not have any official template for writing a thesis, so feel free to use this in your own dissertation.
-
-## How to use:
-Press the green code button on the top right, and click download ZIP. In overleaf or Latex click "New Project" and then "Upload Project". Drag the dowloaded zipfile from your files.
 
 
 # Mal for avhandling i Latex
