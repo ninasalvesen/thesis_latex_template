@@ -8,9 +8,7 @@ This is not an official template issued from NTNU or any other university, but m
 NTNU as far as I know (nov, 2022) does not have any official template for writing a thesis, so feel free to use this in your own dissertation.
 
 ## How to use:
-Sett inn
-
-
+Press the green code button on the top right, and click download ZIP. In overleaf or Latex click "New Project" and then "Upload Project". Drag the dowloaded zipfile from your files.
 
 
 # Mal for avhandling i Latex
@@ -19,6 +17,3 @@ Dette repoet inneholder en mal for en avhandling/sluttrapport skrevet i Latex, s
 ### Forbehold:
 Dette er ikke en offisiell mal utstedt av NTNU eller noe annet universitet, men min personlige mal som jeg deler i håp om at noen som skriver deres avhandling for deres bachelor/master/doktorgrad/hva enn kan bruke den og spare tid på å sette opp selve dokumentet.
 NTNU har, så langt jeg vet (nov, 2022), ikke noe offisiell mal for å skrive en avhandling, så bare bruk denne malen i din egen rapport om du ønsker.
-
-## Hvordan bruke den:
-Sett inn
